@@ -12,39 +12,91 @@ namespace ArrayApps
 {
     public partial class Array : Form
     {
+        const int size = 10;
+        int[] number = new int[size];
+        int index = 0;
+
+         
+            string messge = "";
+
         public Array()
         {
             InitializeComponent();
 
-            const int size = 10;
-            int[] number = new int[size];
+            /*const int size = 10;
+           int[] number = new int[size];
 
-            number[0]= 1;
-            number[1]= 3;
-            number[3]= 4;
-            number[9]= 5;
 
-            string messge = "";
 
-            messge = messge + number[0].ToString()+"\n";
-            messge = messge + number[1].ToString() + "\n";
-            messge = messge + number[3].ToString() + "\n";
-            messge = messge + number[9].ToString() + "\n";
+           string messge = "";
 
-            showRichTextBox.Text = messge;
+          messge = messge + "elment of array :" + number[0].ToString()+"\n";
+           messge = messge + "elment of array :" + number[1].ToString() + "\n";
+           messge = messge + "elment of array :" + number[3].ToString() + "\n";
+           messge = messge + "elment of array :" + number[9].ToString() + "\n";
 
-            
+
+            for (int index = 0; index < number.Length; index++)
+            {
+                if(number[index]!=0)
+                
+                messge = messge + "elment of array " + index + " :" + number[index].ToString() + "\n";
+
+            }
+
+            showRichTextBox.Text = messge;*/
+
+
 
         }
 
         private void ReverseButton_Click(object sender, EventArgs e)
         {
 
+
+            /*messge = messge + "elment of array :" + number[0].ToString()+"\n";
+            messge = messge + "elment of array :" + number[1].ToString() + "\n";
+            messge = messge + "elment of array :" + number[3].ToString() + "\n";
+            messge = messge + "elment of array :" + number[9].ToString() + "\n";*/
+
+          
+
+            for (int index =number.Length- 1; index >=0; index--)
+            {
+                if (number[index] != 0)
+
+                    messge = messge + "elment of array " + index + " :" + number[index].ToString() + "\n";
+
+                
+            }
+
+            showRichTextBox.Text = messge;
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
+            
 
+            number[index]= Convert.ToInt32( numberTextBox.Text);
+            index++;
+
+            string messge = "";
+
+            /*messge = messge + "elment of array :" + number[0].ToString()+"\n";
+            messge = messge + "elment of array :" + number[1].ToString() + "\n";
+            messge = messge + "elment of array :" + number[3].ToString() + "\n";
+            messge = messge + "elment of array :" + number[9].ToString() + "\n";*/
+
+
+            for (int index = 0; index < number.Length; index++)
+            {
+                if (number[index] != 0)
+
+                    messge = messge + "elment of array " + index + " :" + number[index].ToString() + "\n";
+
+            }
+
+            showRichTextBox.Text = messge;
         }
     }
 }
