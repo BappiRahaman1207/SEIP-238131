@@ -12,14 +12,18 @@ namespace CoffeeShopApp
 {
     public partial class CoffeeShop : Form
 
-    {
-        int numberOfQuantity = 1;
-        double blackCoffeePrice = 120;
-        double coldCoffeePrice = 120;
-        double hotCoffeePrice = 120;
-        double regularCoffeePrice = 120;
-        string customerName, contactNo, customerAddress, orderBox;
-        double totalPrice = 0;
+    {   const int size = 20;
+        int index = 0;
+        int [] numberOfQuantity = new int[size];
+        int blackCoffeePrice = 120;
+        int coldCoffeePrice = 120;
+        int hotCoffeePrice = 120;
+        int regularCoffeePrice = 120;
+        string[] customerName = new string[size];
+        int[] contactNo = new int[size];
+        string[] customerAddress = new string [size];
+        string [] orderBox = new string [size];
+        int[] totalPrice = new int [size] ;
     
 
     
@@ -75,58 +79,66 @@ namespace CoffeeShopApp
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            customerName = nameTextBox.Text;
-            contactNo = contactTextBox.Text;
-            customerAddress = addressTextBox.Text;
-            orderBox = OrderComboBox.Text;
-            numberOfQuantity = Convert.ToInt32(quantityTextBox.Text);
+            customerName[index] = nameTextBox.Text;
+            contactNo[index] = Convert.ToInt32(contactTextBox.Text);
+            customerAddress[index] = addressTextBox.Text;
+            orderBox[index] = Convert.ToString(OrderComboBox.Text);
+            numberOfQuantity[index] = Convert.ToInt32(quantityTextBox.Text);
+            string message = "";
 
-            if (orderBox == "Black")
+            if (orderBox[index] == "Black")
 
             {
-                totalPrice = blackCoffeePrice * numberOfQuantity;
-                displayRichTextBox.Text = "\nCustomer Information\n\n" + "\nCustomer Name     : " + customerName + "\n\n"
-                + "\nContact No            : " +contactNo + "\n\n" + "\nCustomer Address  : " +customerAddress + "\n\n"
-                + "\nOrder                    : " + orderBox + "\n\n" + "\nQuantity                : " + numberOfQuantity + "\n\n\n" + "   Total Price  : "
-                + totalPrice + "\n\n";
+                totalPrice[index] = blackCoffeePrice * numberOfQuantity[index];
+
+
+            }
+
+            else if (orderBox[index] == "Cold")
+
+            {
+
+                totalPrice[index] = coldCoffeePrice * numberOfQuantity [index];
                 
             }
 
-            else if (orderBox == "Cold")
+            else if (orderBox [ index] == "Hot")
 
             {
 
-                totalPrice = coldCoffeePrice * numberOfQuantity;
-                displayRichTextBox.Text = "\nCustomer Information\n\n" + "\nCustomer Name     : " + customerName + "\n\n"
-                + "\nContact No            : " + contactNo + "\n\n" + "\nCustomer Address  : " + customerAddress + "\n\n"
-                + "\nOrder                    : " + orderBox + "\n\n" + "\nQuantity                : " + numberOfQuantity + "\n\n\n" + "   Total Price  : "
-                + totalPrice + "\n\n";
-
-            }
-
-            else if (orderBox == "Hot")
-
-            {
-
-                totalPrice = hotCoffeePrice * numberOfQuantity;
-                displayRichTextBox.Text = "\nCustomer Information\n\n" + "\nCustomer Name     : " + customerName + "\n\n"
-                + "\nContact No            : " + contactNo + "\n\n" + "\nCustomer Address  : " + customerAddress + "\n\n"
-                + "\nOrder                    : " + orderBox + "\n\n" + "\nQuantity                : " + numberOfQuantity + "\n\n\n" + "   Total Price  : "
-                + totalPrice + "\n\n";
-
+                totalPrice[index] = hotCoffeePrice * numberOfQuantity[index];
+               
             }
 
             else 
 
             {
 
-                totalPrice = regularCoffeePrice * numberOfQuantity;
-                displayRichTextBox.Text = "\nCustomer Information\n\n" + "\nCustomer Name     : " + customerName + "\n\n"
-                + "\nContact No            : " + contactNo + "\n\n" + "\nCustomer Address  : " + customerAddress + "\n\n"
-                + "\nOrder                    : " + orderBox + "\n\n" + "\nQuantity                : " + numberOfQuantity + "\n\n\n" + "   Total Price  : "
-                + totalPrice + "\n\n";
+                totalPrice[index] = regularCoffeePrice * numberOfQuantity[index];
+
 
             }
+
+            index++;
+
+            for(int index = 0; index < customerName.Length; index++)
+            {
+                if (numberOfQuantity[index]!=0)
+                {
+                    message = message + "\tCustomer Information\n" + "-------------------------------------------------------------------" +"\n\n"
+                    +"\nCustomer Name :" +customerName[index]+"\n\n" + "\nContact No :" + contactNo[index] + "\n\n"
+                    +"\n Customer Address :" + customerAddress[index] + "\n\n"
+                    + "\nOrder : " + orderBox[index] + "\n\n" + "\nQuantity : " + numberOfQuantity[index] + "\n\n"
+                    + "\nTotal Price :" +totalPrice[index]+"\n\n";
+
+
+
+                }
+
+
+            }
+            displayRichTextBox.Text = message;
+
 
             /*  else if (orderBox == "Hot")
 
