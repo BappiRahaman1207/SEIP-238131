@@ -14,16 +14,16 @@ namespace CoffeeShopApp
 
     {   const int size = 20;
         int index = 0;
-        int [] numberOfQuantity = new int[size];
+        List<int>  numberOfQuantity = new List<int>();
         int blackCoffeePrice = 120;
         int coldCoffeePrice = 120;
         int hotCoffeePrice = 120;
         int regularCoffeePrice = 120;
-        string[] customerName = new string[size];
-        int[] contactNo = new int[size];
-        string[] customerAddress = new string [size];
-        string [] orderBox = new string [size];
-        int[] totalPrice = new int [size] ;
+        List<string> customerName = new List<string>();
+        List<int> contactNo = new List<int>();
+        List<string> customerAddress = new List<string>();
+        List<string> orderBox = new List<string> ();
+        List<int> totalPrice = new List<int>() ;
     
 
     
@@ -79,11 +79,12 @@ namespace CoffeeShopApp
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            customerName[index] = nameTextBox.Text;
-            contactNo[index] = Convert.ToInt32(contactTextBox.Text);
-            customerAddress[index] = addressTextBox.Text;
-            orderBox[index] = Convert.ToString(OrderComboBox.Text);
-            numberOfQuantity[index] = Convert.ToInt32(quantityTextBox.Text);
+            customerName.Add( nameTextBox.Text);
+            contactNo.Add (Convert.ToInt32(contactTextBox.Text));
+            customerAddress.Add( addressTextBox.Text);
+            orderBox.Add(Convert.ToString(OrderComboBox.Text));
+            numberOfQuantity.Add( Convert.ToInt32(quantityTextBox.Text));
+            totalPrice.Add(index);
             string message = "";
 
             if (orderBox[index] == "Black")
@@ -121,7 +122,7 @@ namespace CoffeeShopApp
 
             index++;
 
-            for(int index = 0; index < customerName.Length; index++)
+            for(int index = 0; index < customerName.Count; index++)
             {
                 if (numberOfQuantity[index]!=0)
                 {

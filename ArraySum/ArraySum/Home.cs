@@ -12,10 +12,10 @@ namespace ArraySum
 {
     public partial class Home : Form
     {
-        const int size = 10;
+        const int size = ;
         int[] number = new int[size];
         int index = 0;
-        int sum = 0;
+        int sum ;
 
 
         public Home()
@@ -33,15 +33,24 @@ namespace ArraySum
             {
                 if (number[index] != 0)
 
-
+                
                     message = message + "elment " + index + " :" + number[index].ToString() + "\n";
 
-                showRichTextBox.Text = message;
+
+                  showRichTextBox.Text = message + "\n";
+        
+
+             }
+
+            for (int index = 0; index < number.Length; index++)
+            {
+                if (number[index] != 0)
+
+                    sum = +number[index];
+
+                showRichTextBox.Text = sum.ToString();
 
             }
-
-       
-
         }
     }
 }
