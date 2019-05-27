@@ -16,9 +16,9 @@ namespace CoffeeShopApp
         int index = 0;
         List<int>  numberOfQuantity = new List<int>();
         int blackCoffeePrice = 120;
-        int coldCoffeePrice = 120;
-        int hotCoffeePrice = 120;
-        int regularCoffeePrice = 120;
+        int coldCoffeePrice = 100;
+        int hotCoffeePrice = 90;
+        int regularCoffeePrice = 80;
         List<string> customerName = new List<string>();
         List<int> contactNo = new List<int>();
         List<string> customerAddress = new List<string>();
