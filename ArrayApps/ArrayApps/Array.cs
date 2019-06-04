@@ -98,5 +98,10 @@ namespace ArrayApps
 
             showRichTextBox.Text = messge;
         }
+
+        private void Array_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

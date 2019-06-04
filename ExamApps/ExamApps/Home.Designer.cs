@@ -36,6 +36,8 @@
             this.SumButton = new System.Windows.Forms.Button();
             this.MaximumButton = new System.Windows.Forms.Button();
             this.MinimumButton = new System.Windows.Forms.Button();
+            this.EvenButton = new System.Windows.Forms.Button();
+            this.OddButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // showRichTextBox
@@ -95,7 +97,7 @@
             // 
             // MaximumButton
             // 
-            this.MaximumButton.Location = new System.Drawing.Point(119, 370);
+            this.MaximumButton.Location = new System.Drawing.Point(87, 370);
             this.MaximumButton.Name = "MaximumButton";
             this.MaximumButton.Size = new System.Drawing.Size(75, 23);
             this.MaximumButton.TabIndex = 3;
@@ -105,7 +107,7 @@
             // 
             // MinimumButton
             // 
-            this.MinimumButton.Location = new System.Drawing.Point(240, 370);
+            this.MinimumButton.Location = new System.Drawing.Point(189, 370);
             this.MinimumButton.Name = "MinimumButton";
             this.MinimumButton.Size = new System.Drawing.Size(75, 23);
             this.MinimumButton.TabIndex = 4;
@@ -113,11 +115,33 @@
             this.MinimumButton.UseVisualStyleBackColor = true;
             this.MinimumButton.Click += new System.EventHandler(this.MinimumButton_Click);
             // 
+            // EvenButton
+            // 
+            this.EvenButton.Location = new System.Drawing.Point(287, 370);
+            this.EvenButton.Name = "EvenButton";
+            this.EvenButton.Size = new System.Drawing.Size(75, 23);
+            this.EvenButton.TabIndex = 5;
+            this.EvenButton.Text = "Even";
+            this.EvenButton.UseVisualStyleBackColor = true;
+            this.EvenButton.Click += new System.EventHandler(this.EvenButton_Click);
+            // 
+            // OddButton
+            // 
+            this.OddButton.Location = new System.Drawing.Point(379, 370);
+            this.OddButton.Name = "OddButton";
+            this.OddButton.Size = new System.Drawing.Size(75, 23);
+            this.OddButton.TabIndex = 5;
+            this.OddButton.Text = "Odd";
+            this.OddButton.UseVisualStyleBackColor = true;
+            this.OddButton.Click += new System.EventHandler(this.OddButton_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.OddButton);
+            this.Controls.Add(this.EvenButton);
             this.Controls.Add(this.MinimumButton);
             this.Controls.Add(this.MaximumButton);
             this.Controls.Add(this.SumButton);
@@ -143,6 +167,8 @@
         private System.Windows.Forms.Button SumButton;
         private System.Windows.Forms.Button MaximumButton;
         private System.Windows.Forms.Button MinimumButton;
+        private System.Windows.Forms.Button EvenButton;
+        private System.Windows.Forms.Button OddButton;
     }
 }
 

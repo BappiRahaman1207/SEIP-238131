@@ -80,6 +80,7 @@
             this.Controls.Add(this.showRichTextBox);
             this.Name = "Array";
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Array_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

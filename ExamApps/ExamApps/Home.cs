@@ -17,7 +17,7 @@ namespace ExamApps
         int[] max = new int[size];
         int[] min = new int[size];
         int index = 0;
-        
+
 
         public Home()
         {
@@ -41,11 +41,11 @@ namespace ExamApps
             {
                 if (number[index] != 0)
 
-                    message = message +"element " + index + " - " + number[index].ToString() +"\n";
+                    message = message + "element " + index + " - " + number[index].ToString() + "\n";
 
             }
 
-            showRichTextBox.Text = message +"\n";
+            showRichTextBox.Text = message + "\n";
             numberTextBox.Clear();
 
         }
@@ -63,15 +63,15 @@ namespace ExamApps
 
             }
 
-            showRichTextBox.Text = message+"\n";
+            showRichTextBox.Text = message + "\n";
             numberTextBox.Clear();
 
         }
 
         private void ReverseButton_Click(object sender, EventArgs e)
         {
-          string message = "";
-             for (int index = number.Length-1;index>=0; index--)
+            string message = "";
+            for (int index = number.Length - 1; index >= 0; index--)
             {
                 if (number[index] != 0)
 
@@ -130,7 +130,7 @@ namespace ExamApps
                 showRichTextBox.Text = "Maximum element is :" + max + "\n";
 
 
-               }
+            }
             numberTextBox.Clear();
 
         }
@@ -169,6 +169,74 @@ namespace ExamApps
 
             }
             numberTextBox.Clear();
+        }
+
+        private void EvenButton_Click(object sender, EventArgs e)
+        {
+
+
+         
+            string message = "";
+            //number[index] = Convert.ToInt32(numberTextBox.Text);
+            index++;
+            for (int index = 0; index < number.Length; index++)
+            {
+                if (number[index] != 0)
+
+                    message = message + "element " + index + " - " + number[index].ToString() + "\n";
+
+
+            }
+
+            for(int index = 0; index < number.Length; index++)
+            { 
+            if (number[index] % 2 == 0)
+            {
+                    if (number[index] != 0)
+
+                        
+                        message = message + "\n"+ "The Even elements are:" + " " + number[index];
+            }
+
+            }
+
+            showRichTextBox.Text = message + "\n";
+
+
+
+        }
+
+        private void OddButton_Click(object sender, EventArgs e)
+        {
+
+            string message = "";
+            //number[index] = Convert.ToInt32(numberTextBox.Text);
+            index++;
+            for (int index = 0; index < number.Length; index++)
+            {
+                if (number[index] != 0)
+
+                    message = message + "element " + index + " - " + number[index].ToString() + "\n";
+
+
+            }
+
+            for (int index = 0; index < number.Length; index++)
+            {
+                if (number[index] % 2 != 0)
+                {
+                    if (number[index] != 0)
+
+
+                        message = message + "\n" + "The Even elements are:" + " " + number[index];
+                }
+
+            }
+
+            showRichTextBox.Text = message + "\n";
+
+
+
         }
     }
 }
