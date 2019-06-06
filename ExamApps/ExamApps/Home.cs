@@ -17,6 +17,7 @@ namespace ExamApps
         int[] max = new int[size];
         int[] min = new int[size];
         int index = 0;
+        int j,t;
 
 
         public Home()
@@ -236,6 +237,86 @@ namespace ExamApps
             showRichTextBox.Text = message + "\n";
 
 
+
+        }
+
+        private void DescendingButton_Click(object sender, EventArgs e)
+        {
+            string message = "";
+            //number[index] = Convert.ToInt32(numberTextBox.Text);
+            index++;
+            for (int index = 0; index < number.Length; index++)
+            {
+                if (number[index] != 0)
+
+                    message = message + "element " + index + " - " + number[index].ToString() + "\n";
+
+
+            }
+
+
+
+            for (index = 0; index < number.Length; index++)
+            {
+                for (j = index + 1; j < number.Length; j++)
+                {
+                    if (number[index] < number[j])
+                    {
+                        t = number[index];
+                        number[index] = number[j];
+                        number[j] = t;
+                    }
+                }
+            }
+
+            for (index = 0; index < number.Length; index++)
+            {
+                if (number[index] != 0)
+                    message = message + "\n" + "The Descending elements are:" + number[index];
+            }
+
+
+            showRichTextBox.Text = message + "\n";
+        }
+
+        private void AscendingButton_Click(object sender, EventArgs e)
+        {
+            string message = "";
+            //number[index] = Convert.ToInt32(numberTextBox.Text);
+            index++;
+            for (int index = 0; index < number.Length; index++)
+            {
+                if (number[index] != 0)
+
+                    message = message + "element " + index + " - " + number[index].ToString() + "\n";
+
+
+            }
+
+
+
+            for (index = 0; index < number.Length; index++)
+            {
+                for (j = index + 1; j < number.Length; j++)
+                {
+                    if (number[index] > number[j])
+                    {
+                        t = number[index];
+                        number[index] = number[j];
+                        number[j] = t;
+                    }
+                }
+            }
+           
+            for (index = 0; index < number.Length; index++)
+            {
+                if (number[index] != 0)
+                    message = message +"\n" + "The Ascending elements are:" + number[index];
+            }
+
+
+            showRichTextBox.Text = message + "\n";
+           
 
         }
     }

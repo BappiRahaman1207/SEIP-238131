@@ -38,6 +38,8 @@
             this.MinimumButton = new System.Windows.Forms.Button();
             this.EvenButton = new System.Windows.Forms.Button();
             this.OddButton = new System.Windows.Forms.Button();
+            this.DescendingButton = new System.Windows.Forms.Button();
+            this.AscendingButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // showRichTextBox
@@ -107,7 +109,7 @@
             // 
             // MinimumButton
             // 
-            this.MinimumButton.Location = new System.Drawing.Point(189, 370);
+            this.MinimumButton.Location = new System.Drawing.Point(178, 370);
             this.MinimumButton.Name = "MinimumButton";
             this.MinimumButton.Size = new System.Drawing.Size(75, 23);
             this.MinimumButton.TabIndex = 4;
@@ -117,7 +119,7 @@
             // 
             // EvenButton
             // 
-            this.EvenButton.Location = new System.Drawing.Point(287, 370);
+            this.EvenButton.Location = new System.Drawing.Point(269, 370);
             this.EvenButton.Name = "EvenButton";
             this.EvenButton.Size = new System.Drawing.Size(75, 23);
             this.EvenButton.TabIndex = 5;
@@ -127,7 +129,7 @@
             // 
             // OddButton
             // 
-            this.OddButton.Location = new System.Drawing.Point(379, 370);
+            this.OddButton.Location = new System.Drawing.Point(361, 370);
             this.OddButton.Name = "OddButton";
             this.OddButton.Size = new System.Drawing.Size(75, 23);
             this.OddButton.TabIndex = 5;
@@ -135,11 +137,33 @@
             this.OddButton.UseVisualStyleBackColor = true;
             this.OddButton.Click += new System.EventHandler(this.OddButton_Click);
             // 
+            // DescendingButton
+            // 
+            this.DescendingButton.Location = new System.Drawing.Point(178, 415);
+            this.DescendingButton.Name = "DescendingButton";
+            this.DescendingButton.Size = new System.Drawing.Size(75, 23);
+            this.DescendingButton.TabIndex = 6;
+            this.DescendingButton.Text = "Descending";
+            this.DescendingButton.UseVisualStyleBackColor = true;
+            this.DescendingButton.Click += new System.EventHandler(this.DescendingButton_Click);
+            // 
+            // AscendingButton
+            // 
+            this.AscendingButton.Location = new System.Drawing.Point(87, 415);
+            this.AscendingButton.Name = "AscendingButton";
+            this.AscendingButton.Size = new System.Drawing.Size(75, 23);
+            this.AscendingButton.TabIndex = 7;
+            this.AscendingButton.Text = "Ascending";
+            this.AscendingButton.UseVisualStyleBackColor = true;
+            this.AscendingButton.Click += new System.EventHandler(this.AscendingButton_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.AscendingButton);
+            this.Controls.Add(this.DescendingButton);
             this.Controls.Add(this.OddButton);
             this.Controls.Add(this.EvenButton);
             this.Controls.Add(this.MinimumButton);
@@ -169,6 +193,8 @@
         private System.Windows.Forms.Button MinimumButton;
         private System.Windows.Forms.Button EvenButton;
         private System.Windows.Forms.Button OddButton;
+        private System.Windows.Forms.Button DescendingButton;
+        private System.Windows.Forms.Button AscendingButton;
     }
 }
 
