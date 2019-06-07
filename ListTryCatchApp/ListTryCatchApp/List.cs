@@ -26,39 +26,54 @@ namespace ListTryCatchApp
             try
             {
                 string user;
+                int age;
+                string name = nameTextBox.Text;
+                userlabel.Text = "";
 
                 if (!string.IsNullOrEmpty(userTextBox.Text))
                 {
                     user = userTextBox.Text;
-                    users.Add(user);
+                    bool isExist= false;
+                    isExist = IsExist(user);
+                    if(isExist)
+                    {
+                        MessageBox.Show("User: "+ user +"alreday exist!!");
+                        return;
+                    } 
 
                 }
 
                 else
                 {
 
-                    MessageBox.Show("Field Can not be Empty!");
+                    userlabel.Text= "Field Can not be Empty!";
                     return;
                 }
 
-                string name = nameTextBox.Text;
-                names.Add(name);
+ 
+              
+                agelabel.Text = "";
 
-
-                int age;
                 if (!string.IsNullOrEmpty(ageTextBox.Text))
                 {
                     age = Convert.ToInt32(ageTextBox.Text);
-                    ages.Add(age);
+                  
                     
                 }
 
                 else
                 {
 
-                    MessageBox.Show("Field Can not be Empty!");
+                    agelabel.Text="Field Can not be Empty!";
                     return;
                 }
+
+
+              
+                users.Add(user);
+                names.Add(name);
+                ages.Add(age);
+
 
                 displayRichTextBox.Text = Display();
                 
@@ -96,6 +111,18 @@ namespace ListTryCatchApp
 
         }
 
+        private bool IsExist(string user)
+        {
+            bool isExist = false;
+            foreach(string userChk in users)
+            {
+                if (user == userChk)
+                    isExist = true;
+
+            }
+
+            return isExist;
+        }
 
 
 

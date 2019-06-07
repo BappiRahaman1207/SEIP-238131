@@ -36,6 +36,8 @@
             this.ageTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.displayRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.userlabel = new System.Windows.Forms.Label();
+            this.agelabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -104,11 +106,29 @@
             this.displayRichTextBox.TabIndex = 3;
             this.displayRichTextBox.Text = "";
             // 
+            // userlabel
+            // 
+            this.userlabel.AutoSize = true;
+            this.userlabel.Location = new System.Drawing.Point(227, 78);
+            this.userlabel.Name = "userlabel";
+            this.userlabel.Size = new System.Drawing.Size(0, 13);
+            this.userlabel.TabIndex = 4;
+            // 
+            // agelabel
+            // 
+            this.agelabel.AutoSize = true;
+            this.agelabel.Location = new System.Drawing.Point(227, 165);
+            this.agelabel.Name = "agelabel";
+            this.agelabel.Size = new System.Drawing.Size(0, 13);
+            this.agelabel.TabIndex = 4;
+            // 
             // List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 450);
+            this.Controls.Add(this.agelabel);
+            this.Controls.Add(this.userlabel);
             this.Controls.Add(this.displayRichTextBox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.ageTextBox);
@@ -134,6 +154,8 @@
         private System.Windows.Forms.TextBox ageTextBox;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.RichTextBox displayRichTextBox;
+        private System.Windows.Forms.Label userlabel;
+        private System.Windows.Forms.Label agelabel;
     }
 }
 
