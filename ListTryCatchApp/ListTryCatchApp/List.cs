@@ -25,12 +25,27 @@ namespace ListTryCatchApp
         {
             try
             {
-                string user = userTextBox.Text;
-                string name = nameTextBox.Text;
-                users.Add(user);
-                names.Add(name);
-                int age;
+                string user;
 
+                if (!string.IsNullOrEmpty(userTextBox.Text))
+                {
+                    user = userTextBox.Text;
+                    users.Add(user);
+
+                }
+
+                else
+                {
+
+                    MessageBox.Show("Field Can not be Empty!");
+                    return;
+                }
+
+                string name = nameTextBox.Text;
+                names.Add(name);
+
+
+                int age;
                 if (!string.IsNullOrEmpty(ageTextBox.Text))
                 {
                     age = Convert.ToInt32(ageTextBox.Text);
