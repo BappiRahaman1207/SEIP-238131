@@ -33,12 +33,19 @@ namespace FireRangeApps
             try
             {
                 int soldier;
+                SolierNolabel.Text = "";
 
                  if (!string.IsNullOrEmpty(SoldierNoTextBox.Text))
                  {
-                    soldier= Convert.ToInt32(SoldierNoTextBox.Text);
-                    soldierNo.Add(Convert.ToInt32(SoldierNoTextBox.Text));
-
+                    soldier = Convert.ToInt32(SoldierNoTextBox.Text);
+                  
+                    bool isExist = false;
+                    isExist = IsExist(soldier);
+                    if (isExist)
+                    {
+                        MessageBox.Show("Soldier Alreday Exists!");
+                        return;
+                    }
                  }
 
                  else
@@ -47,7 +54,7 @@ namespace FireRangeApps
                     return;
                 }
 
-                
+                soldierNo.Add(Convert.ToInt32(SoldierNoTextBox.Text));
                 soldierName.Add(SoldierNameTextBox.Text);
                 target1score.Add(Convert.ToInt32(Target1ScoreTextBox.Text));
                 target2score.Add(Convert.ToInt32(Target2ScoreTextBox.Text));
@@ -118,6 +125,18 @@ namespace FireRangeApps
 
         }
 
+        private bool IsExist(int Soldier)
+        {
+            bool isExist = false;
+            foreach (int SoldierChk in soldierNo)
+            {
+                if (Soldier == SoldierChk)
+                    isExist = true;
+
+            }
+
+            return isExist;
+        }
 
     }
 
