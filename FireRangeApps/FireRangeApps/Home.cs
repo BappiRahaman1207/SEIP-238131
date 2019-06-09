@@ -15,12 +15,12 @@ namespace FireRangeApps
     {
         const int size = 20;
         int index = 0;
-        int[] soldierNo = new int [size];
-        string[] soldierName = new string[size];
-        int[] target1score = new int[size];
-        int[] target2score = new int[size];
-        int[] target3score = new int[size];
-        int[] target4score = new int[size];
+        List<int> soldierNo = new List<int>();
+        List<string> soldierName = new List<string>();
+        List <int> target1score = new List<int>();
+        List <int> target2score = new List<int>();
+        List <int>target3score = new List<int>();
+        List <int> target4score = new List<int>();
 
         public Home()
         {
@@ -29,31 +29,45 @@ namespace FireRangeApps
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-           
-            string message = "";
 
-            soldierNo[index] =Convert.ToInt32(SoldierNoTextBox.Text);
-            soldierName[index] = SoldierNameTextBox.Text;
-            target1score[index] = Convert.ToInt32(Target1ScoreTextBox.Text);
-            target2score[index] = Convert.ToInt32(Target2ScoreTextBox.Text);
-            target3score[index] = Convert.ToInt32(Target3ScoreTextBox.Text);
-            target4score[index] = Convert.ToInt32(Target4ScoreTextBox.Text);
-            index++;
-            for (int index = 0; index < soldierNo.Length; index++)
+            try
             {
-                if (soldierNo[index] != 0)
+                int soldier;
 
-                    message = message + "\t Soldier Information\n" + "-------------------------------------------------------------------" + "\n\n"
-                      + "\nSoldier No :" + soldierNo[index] + "\n\n" + "\nSoldier Name :" + soldierName[index] + "\n\n"
-                      + "\n Target 1 Score :" + target1score[index] + "\n\n"
-                      + "\nTarget 2 Score : " + target2score[index] + "\n\n" + "\nTarget 3 Score  : " + target3score[index] + "\n\n"
-                      + "\nTarget 4 Score :" + target4score[index] + "\n\n";
+                 if (!string.IsNullOrEmpty(SoldierNoTextBox.Text))
+                 {
+                    soldier= Convert.ToInt32(SoldierNoTextBox.Text);
+                    soldierNo.Add(Convert.ToInt32(SoldierNoTextBox.Text));
+
+                 }
+
+                 else
+                 {
+                    SolierNolabel.Text = "Field Can not be Empty!";
+                    return;
+                }
+
+                
+                soldierName.Add(SoldierNameTextBox.Text);
+                target1score.Add(Convert.ToInt32(Target1ScoreTextBox.Text));
+                target2score.Add(Convert.ToInt32(Target2ScoreTextBox.Text));
+                target3score.Add(Convert.ToInt32(Target3ScoreTextBox.Text));
+                target4score.Add(Convert.ToInt32(Target4ScoreTextBox.Text));
 
 
+                showRichTextBox.Text = Display();
+
+                MessageBox.Show("Date insert successfully");
+                showRichTextBox.Clear();
+            }
+
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
 
             }
 
-            showRichTextBox.Text = message;
+
 
         }
 
@@ -66,5 +80,45 @@ namespace FireRangeApps
         {
             
         }
+
+        private void ShowAllButton_Click(object sender, EventArgs e)
+        {
+          
+    
+
+            showRichTextBox.Text = Display();
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private string Display()
+        {
+            string message = "";
+
+            index++;
+
+            for (int index = 0; index < soldierNo.Count; index++)
+            {
+                if (soldierNo[index] != 0)
+
+                    message = message + "\t Soldier Information\n" + "-------------------------------------------------------------------" + "\n\n"
+                      + "\nSoldier No :" + soldierNo[index] + "\n\n" + "\nSoldier Name :" + soldierName[index] + "\n\n"
+                      + "\n Target 1 Score :" + target1score[index] + "\n\n"
+                      + "\nTarget 2 Score : " + target2score[index] + "\n\n" + "\nTarget 3 Score  : " + target3score[index] + "\n\n"
+                      + "\nTarget 4 Score :" + target4score[index] + "\n\n";
+
+
+            }
+
+         return message;
+           
+
+        }
+
+
     }
+
 }

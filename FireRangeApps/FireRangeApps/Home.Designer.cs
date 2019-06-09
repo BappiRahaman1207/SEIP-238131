@@ -55,6 +55,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.SolierNolabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // SoldierNoTextBox
@@ -168,7 +169,7 @@
             // 
             // showRichTextBox
             // 
-            this.showRichTextBox.Location = new System.Drawing.Point(326, 174);
+            this.showRichTextBox.Location = new System.Drawing.Point(479, 174);
             this.showRichTextBox.Name = "showRichTextBox";
             this.showRichTextBox.Size = new System.Drawing.Size(252, 208);
             this.showRichTextBox.TabIndex = 3;
@@ -188,7 +189,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(344, 32);
+            this.label8.Location = new System.Drawing.Point(497, 32);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(141, 20);
             this.label8.TabIndex = 4;
@@ -197,7 +198,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(356, 88);
+            this.label9.Location = new System.Drawing.Point(509, 88);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 13);
             this.label9.TabIndex = 5;
@@ -206,7 +207,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(439, 86);
+            this.radioButton1.Location = new System.Drawing.Point(592, 86);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(74, 17);
             this.radioButton1.TabIndex = 6;
@@ -217,7 +218,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(545, 86);
+            this.radioButton2.Location = new System.Drawing.Point(698, 86);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(88, 17);
             this.radioButton2.TabIndex = 6;
@@ -227,14 +228,14 @@
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(439, 122);
+            this.searchTextBox.Location = new System.Drawing.Point(592, 122);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(139, 20);
             this.searchTextBox.TabIndex = 7;
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(603, 122);
+            this.SearchButton.Location = new System.Drawing.Point(756, 122);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(75, 23);
             this.SearchButton.TabIndex = 8;
@@ -243,17 +244,18 @@
             // 
             // ShowAllButton
             // 
-            this.ShowAllButton.Location = new System.Drawing.Point(603, 161);
+            this.ShowAllButton.Location = new System.Drawing.Point(756, 161);
             this.ShowAllButton.Name = "ShowAllButton";
             this.ShowAllButton.Size = new System.Drawing.Size(75, 23);
             this.ShowAllButton.TabIndex = 8;
             this.ShowAllButton.Text = "Show All";
             this.ShowAllButton.UseVisualStyleBackColor = true;
+            this.ShowAllButton.Click += new System.EventHandler(this.ShowAllButton_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(336, 404);
+            this.label10.Location = new System.Drawing.Point(489, 404);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 13);
             this.label10.TabIndex = 9;
@@ -262,7 +264,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(336, 433);
+            this.label11.Location = new System.Drawing.Point(489, 433);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 13);
             this.label11.TabIndex = 9;
@@ -270,14 +272,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(464, 401);
+            this.textBox1.Location = new System.Drawing.Point(617, 401);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 10;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(464, 430);
+            this.textBox2.Location = new System.Drawing.Point(617, 430);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 10;
@@ -286,17 +288,26 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(356, 67);
+            this.label12.Location = new System.Drawing.Point(509, 67);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(96, 16);
             this.label12.TabIndex = 4;
             this.label12.Text = "Soldier Criteria";
             // 
+            // SolierNolabel
+            // 
+            this.SolierNolabel.AutoSize = true;
+            this.SolierNolabel.Location = new System.Drawing.Point(272, 94);
+            this.SolierNolabel.Name = "SolierNolabel";
+            this.SolierNolabel.Size = new System.Drawing.Size(0, 13);
+            this.SolierNolabel.TabIndex = 11;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 468);
+            this.ClientSize = new System.Drawing.Size(902, 517);
+            this.Controls.Add(this.SolierNolabel);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label11);
@@ -326,6 +337,7 @@
             this.Controls.Add(this.SoldierNoTextBox);
             this.Name = "Home";
             this.Text = "Fire Range Automation System";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,6 +372,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label SolierNolabel;
     }
 }
 
