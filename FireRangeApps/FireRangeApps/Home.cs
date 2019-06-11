@@ -91,9 +91,8 @@ namespace FireRangeApps
         private void ShowAllButton_Click(object sender, EventArgs e)
         {
           
-    
-
             showRichTextBox.Text = Display();
+         
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -138,6 +137,20 @@ namespace FireRangeApps
             return isExist;
         }
 
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+
+
+            showRichTextBox.Text = Display();
+
+
+
+        }
     }
 
 }
