@@ -4,7 +4,7 @@ USE StudentDB
 --DROP DATABASE StudentDB
 
 CREATE TABLE Districts(
-ID int IDENTITY (1,1) ,
+ID int IDENTITY (1,1) PRIMARY KEY,
 Name VARCHAR(50)
 )
 
@@ -21,7 +21,7 @@ RollNo VARCHAR(10),
 Name VARCHAR(100),
 Age int,
 Address VARCHAR(MAX),
-DistrictID int
+DistrictID int FOREIGN KEY REFERENCES Districts(ID)
 )
 --DROP TABLE Students
 
@@ -33,6 +33,7 @@ INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('EEE002', 
 INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('EEE003', 'Snigdha', 21, 'Uttora',1)
 
 INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('EEE003', 'Snigdha Shaha', 20, 'Uttora',3)
+INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('EEE003', 'monir', 20, 'Uttora',4)
 
 SELECT * FROM Students
 
