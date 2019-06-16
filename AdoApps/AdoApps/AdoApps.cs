@@ -35,14 +35,29 @@ namespace AdoApps
 
               //
                 SqlCommand sqlCommand = new SqlCommand();
-                string commandString = @"INSERT INTO Departments Values ('Computer Science and Engineering','CSE')";
+                string commandString = @"INSERT INTO Departments Values ('Electronics and Electrical Engineering','EEE')";
                 sqlCommand.CommandText = commandString;
                 sqlCommand.Connection = sqlConnection;
 
                 //
                 sqlConnection.Open();
 
-                sqlCommand.ExecuteNonQuery();
+
+                int isExecuted = 0;
+                isExecuted = sqlCommand.ExecuteNonQuery();
+
+                if (isExecuted>0)
+                {
+                    MessageBox.Show("Save Data Successfuly!");
+
+                }
+
+                else
+                {
+                    MessageBox.Show("Save Failed!");
+                }
+
+             
 
 
                 //
