@@ -25,8 +25,12 @@ namespace AdoApps
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            string name = "BANGLA";
-            string code = "BG";
+            //string name = "BANGLA";
+            //string code = "BG";
+
+            string name = nameTextBox.Text;
+            string code = codeTextBox.Text;
+
             Insert(name,code);
 
         }

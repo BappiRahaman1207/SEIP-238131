@@ -54,6 +54,9 @@ Code VARCHAR(50)
 INSERT INTO Departments Values ('Computer Science and Engineering','CSE')
 INSERT INTO Departments Values ('Electronics and Electrical Engineering','EEE')
 
+DELETE Departments
+WHERE ID = 5 
+
 SELECT * FROM Departments
 
 CREATE TABLE Subjects(
