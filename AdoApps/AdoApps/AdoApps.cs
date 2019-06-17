@@ -102,5 +102,31 @@ namespace AdoApps
             }
 
         }
+
+        private void ShowButton_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"server=DESKTOP-GPO65HT;Database= ADODB;integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            string commandString= @"SELECT * FROM Departments";
+            SqlCommand sqlCommand = new SqlCommand(commandString,sqlConnection);
+
+            sqlConnection.Open();
+
+            SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+
+            if (dataReader.HasRows)
+            {
+                DataTable dataTable = new DataTable();
+                dataTable.Load(dataReader);
+                ShowDataGridView.DataSource = dataTable;
+            
+            }
+
+
+
+            sqlConnection.Close();
+        }
     }
 }

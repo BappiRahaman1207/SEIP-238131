@@ -33,6 +33,9 @@
             this.codeTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.ShowButton = new System.Windows.Forms.Button();
+            this.ShowDataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.ShowDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // SaveButton
@@ -77,11 +80,31 @@
             this.nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.nameTextBox.TabIndex = 2;
             // 
+            // ShowButton
+            // 
+            this.ShowButton.Location = new System.Drawing.Point(241, 143);
+            this.ShowButton.Name = "ShowButton";
+            this.ShowButton.Size = new System.Drawing.Size(75, 23);
+            this.ShowButton.TabIndex = 3;
+            this.ShowButton.Text = "Show";
+            this.ShowButton.UseVisualStyleBackColor = true;
+            this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
+            // 
+            // ShowDataGridView
+            // 
+            this.ShowDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ShowDataGridView.Location = new System.Drawing.Point(12, 212);
+            this.ShowDataGridView.Name = "ShowDataGridView";
+            this.ShowDataGridView.Size = new System.Drawing.Size(505, 187);
+            this.ShowDataGridView.TabIndex = 4;
+            // 
             // AdoApps
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 411);
+            this.Controls.Add(this.ShowDataGridView);
+            this.Controls.Add(this.ShowButton);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.codeTextBox);
@@ -90,6 +113,7 @@
             this.Name = "AdoApps";
             this.Text = "DepartmentsUi";
             this.Load += new System.EventHandler(this.AdoApps_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ShowDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,6 +126,8 @@
         private System.Windows.Forms.TextBox codeTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Button ShowButton;
+        private System.Windows.Forms.DataGridView ShowDataGridView;
     }
 }
 
