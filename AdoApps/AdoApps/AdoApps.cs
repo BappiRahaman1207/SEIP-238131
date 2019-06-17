@@ -13,6 +13,13 @@ namespace AdoApps
 {
     public partial class AdoApps : Form
     {
+        class Department
+        {
+            public string Name { set; get; }
+            public string Code{ set; get; }
+
+        }
+
         public AdoApps()
         {
             InitializeComponent();
@@ -28,14 +35,20 @@ namespace AdoApps
             //string name = "BANGLA";
             //string code = "BG";
 
-            string name = nameTextBox.Text;
-            string code = codeTextBox.Text;
+            // string name = nameTextBox.Text;
+            //string code = codeTextBox.Text;
 
-            Insert(name,code);
+            //Insert(name,code);
+
+            Department department = new Department();
+            department.Name = nameTextBox.Text;
+            department.Code = codeTextBox.Text;
+            Insert(department);
 
         }
 
-        private void Insert(string name,string code)
+       // private void Insert(string name,string code)
+        private void Insert(Department department)
         {
 
             try
@@ -49,7 +62,8 @@ namespace AdoApps
                 //
                 SqlCommand sqlCommand = new SqlCommand();
                 //string commandString = @"INSERT INTO Departments Values ('Electronics and Electrical Engineering','EEE')";
-                string commandString = @"INSERT INTO Departments Values ('"+name+"','"+code+"')";
+                //string commandString = @"INSERT INTO Departments Values ('"+name+"','"+code+"')";
+                string commandString = @"INSERT INTO Departments Values ('" + department.Name + "','" + department.Code + "')";
                 sqlCommand.CommandText = commandString;
                 sqlCommand.Connection = sqlConnection;
 
