@@ -25,8 +25,8 @@ namespace AdoApps
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            string name = "";
-            string code = "";
+            string name = "BANGLA";
+            string code = "BG";
             Insert(name,code);
 
         }
