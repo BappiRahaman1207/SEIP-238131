@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AdoApps.Properties
+namespace StudentsApps.Properties
 {
 
 

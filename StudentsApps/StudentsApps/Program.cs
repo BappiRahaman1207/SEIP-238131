@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdoApps
+namespace StudentsApps
 {
     static class Program
     {
@@ -16,7 +16,9 @@ namespace AdoApps
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdoApps());
+            //Application.Run(new Departments());
+            Application.Run(new Students());
+
         }
     }
 }

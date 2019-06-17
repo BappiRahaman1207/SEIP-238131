@@ -9,25 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdoApps
+namespace StudentsApps
 {
-    public partial class AdoApps : Form
+    public partial class Departments : Form
     {
         class Department
         {
             public string Name { set; get; }
-            public string Code{ set; get; }
+            public string Code { set; get; }
 
         }
-
-        public AdoApps()
+        public Departments()
         {
             InitializeComponent();
-        }
-
-        private void AdoApps_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -47,7 +41,33 @@ namespace AdoApps
 
         }
 
-       // private void Insert(string name,string code)
+        private void ShowButton_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"server=DESKTOP-GPO65HT;Database= ADODB;integrated Security=True";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            string commandString = @"SELECT * FROM Departments";
+            SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+
+            SqlDataReader dataReader = sqlCommand.ExecuteReader();
+
+
+            if (dataReader.HasRows)
+            {
+                DataTable dataTable = new DataTable();
+                dataTable.Load(dataReader);
+                ShowDataGridView.DataSource = dataTable;
+
+            }
+
+
+
+            sqlConnection.Close();
+        }
+
+        // private void Insert(string name,string code)
         private void Insert(Department department)
         {
 
@@ -103,30 +123,5 @@ namespace AdoApps
 
         }
 
-        private void ShowButton_Click(object sender, EventArgs e)
-        {
-            string connectionString = @"server=DESKTOP-GPO65HT;Database= ADODB;integrated Security=True";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-
-            string commandString= @"SELECT * FROM Departments";
-            SqlCommand sqlCommand = new SqlCommand(commandString,sqlConnection);
-
-            sqlConnection.Open();
-
-            SqlDataReader dataReader = sqlCommand.ExecuteReader();
-
-
-            if (dataReader.HasRows)
-            {
-                DataTable dataTable = new DataTable();
-                dataTable.Load(dataReader);
-                ShowDataGridView.DataSource = dataTable;
-            
-            }
-
-
-
-            sqlConnection.Close();
-        }
     }
 }

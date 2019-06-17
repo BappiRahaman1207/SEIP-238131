@@ -16,12 +16,12 @@ INSERT INTO Districts Values ('Chitagong')
 SELECT * FROM Districts
 
 CREATE TABLE Students(
-ID int IDENTITY (1,1),
+ID int IDENTITY (1,1)PRIMARY KEY,
 RollNo VARCHAR(10),
 Name VARCHAR(100),
 Age int,
 Address VARCHAR(MAX),
-DistrictID int FOREIGN KEY REFERENCES Districts(ID)
+DistrictID int
 )
 --DROP TABLE Students
 
