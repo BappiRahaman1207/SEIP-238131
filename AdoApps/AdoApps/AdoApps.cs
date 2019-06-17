@@ -25,17 +25,27 @@ namespace AdoApps
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            string name = "";
+            string code = "";
+            Insert(name,code);
+
+        }
+
+        private void Insert(string name,string code)
+        {
+
             try
             {
                 //
-             
+
                 SqlConnection sqlConnection = new SqlConnection();
                 String connectionString = @"server=DESKTOP-GPO65HT;Database= ADODB;integrated Security=True";
                 sqlConnection.ConnectionString = connectionString;
 
-              //
+                //
                 SqlCommand sqlCommand = new SqlCommand();
-                string commandString = @"INSERT INTO Departments Values ('Electronics and Electrical Engineering','EEE')";
+                //string commandString = @"INSERT INTO Departments Values ('Electronics and Electrical Engineering','EEE')";
+                string commandString = @"INSERT INTO Departments Values ('"+name+"','"+code+"')";
                 sqlCommand.CommandText = commandString;
                 sqlCommand.Connection = sqlConnection;
 
@@ -46,7 +56,7 @@ namespace AdoApps
                 int isExecuted = 0;
                 isExecuted = sqlCommand.ExecuteNonQuery();
 
-                if (isExecuted>0)
+                if (isExecuted > 0)
                 {
                     MessageBox.Show("Save Data Successfuly!");
 
@@ -57,7 +67,7 @@ namespace AdoApps
                     MessageBox.Show("Save Failed!");
                 }
 
-             
+
 
 
                 //
