@@ -136,7 +136,7 @@
             // 
             // ShowButton
             // 
-            this.ShowButton.Location = new System.Drawing.Point(183, 306);
+            this.ShowButton.Location = new System.Drawing.Point(242, 306);
             this.ShowButton.Name = "ShowButton";
             this.ShowButton.Size = new System.Drawing.Size(75, 23);
             this.ShowButton.TabIndex = 2;
@@ -147,9 +147,9 @@
             // ShowDataGridView
             // 
             this.ShowDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ShowDataGridView.Location = new System.Drawing.Point(304, 92);
+            this.ShowDataGridView.Location = new System.Drawing.Point(232, 70);
             this.ShowDataGridView.Name = "ShowDataGridView";
-            this.ShowDataGridView.Size = new System.Drawing.Size(240, 150);
+            this.ShowDataGridView.Size = new System.Drawing.Size(355, 150);
             this.ShowDataGridView.TabIndex = 3;
             // 
             // Students

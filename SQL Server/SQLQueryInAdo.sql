@@ -47,12 +47,14 @@ WHERE ID = 30
 
 CREATE TABLE Departments(
 ID int IDENTITY (1,1)PRIMARY KEY,
+SL int,
 Name VARCHAR(50),
 Code VARCHAR(50)
 )
+--DROP TABLE Departments
 
-INSERT INTO Departments Values ('Computer Science and Engineering','CSE')
-INSERT INTO Departments Values ('Electronics and Electrical Engineering','EEE')
+INSERT INTO Departments Values (1,'Computer Science and Engineering','CSE')
+INSERT INTO Departments Values (2,'Electronics and Electrical Engineering','EEE')
 
 DELETE Departments
 WHERE ID = 5 

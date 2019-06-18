@@ -35,6 +35,11 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.ShowButton = new System.Windows.Forms.Button();
             this.ShowDataGridView = new System.Windows.Forms.DataGridView();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.slTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ShowDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,9 +77,9 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(150, 201);
+            this.SaveButton.Location = new System.Drawing.Point(140, 183);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.Size = new System.Drawing.Size(75, 28);
             this.SaveButton.TabIndex = 2;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -82,9 +87,9 @@
             // 
             // ShowButton
             // 
-            this.ShowButton.Location = new System.Drawing.Point(261, 201);
+            this.ShowButton.Location = new System.Drawing.Point(263, 201);
             this.ShowButton.Name = "ShowButton";
-            this.ShowButton.Size = new System.Drawing.Size(75, 23);
+            this.ShowButton.Size = new System.Drawing.Size(91, 28);
             this.ShowButton.TabIndex = 2;
             this.ShowButton.Text = "Show";
             this.ShowButton.UseVisualStyleBackColor = true;
@@ -93,16 +98,67 @@
             // ShowDataGridView
             // 
             this.ShowDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ShowDataGridView.Location = new System.Drawing.Point(13, 272);
+            this.ShowDataGridView.Location = new System.Drawing.Point(263, 31);
             this.ShowDataGridView.Name = "ShowDataGridView";
-            this.ShowDataGridView.Size = new System.Drawing.Size(567, 150);
+            this.ShowDataGridView.Size = new System.Drawing.Size(432, 150);
             this.ShowDataGridView.TabIndex = 3;
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(381, 201);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(91, 28);
+            this.DeleteButton.TabIndex = 4;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.Location = new System.Drawing.Point(497, 201);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(91, 28);
+            this.UpdateButton.TabIndex = 4;
+            this.UpdateButton.Text = "Update";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.Location = new System.Drawing.Point(604, 201);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(91, 28);
+            this.SearchButton.TabIndex = 4;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // slTextBox
+            // 
+            this.slTextBox.Location = new System.Drawing.Point(115, 50);
+            this.slTextBox.Name = "slTextBox";
+            this.slTextBox.Size = new System.Drawing.Size(100, 20);
+            this.slTextBox.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(51, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "SL";
             // 
             // Departments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 450);
+            this.ClientSize = new System.Drawing.Size(757, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.slTextBox);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.UpdateButton);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.ShowDataGridView);
             this.Controls.Add(this.ShowButton);
             this.Controls.Add(this.SaveButton);
@@ -127,6 +183,11 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button ShowButton;
         private System.Windows.Forms.DataGridView ShowDataGridView;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.TextBox slTextBox;
+        private System.Windows.Forms.Label label3;
     }
 }
 

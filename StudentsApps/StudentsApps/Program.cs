@@ -16,8 +16,8 @@ namespace StudentsApps
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Departments());
-            Application.Run(new Students());
+            Application.Run(new Departments());
+           // Application.Run(new Students());
 
         }
     }
