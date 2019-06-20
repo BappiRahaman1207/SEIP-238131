@@ -46,10 +46,10 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.sslTextBox = new System.Windows.Forms.TextBox();
-            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ShowDataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
+            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ShowDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -160,6 +160,7 @@
             this.DeleteButton.TabIndex = 4;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // UpdateButton
             // 
@@ -169,6 +170,7 @@
             this.UpdateButton.TabIndex = 4;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // SearchButton
             // 
@@ -178,6 +180,7 @@
             this.SearchButton.TabIndex = 4;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // label6
             // 
@@ -195,10 +198,6 @@
             this.sslTextBox.Size = new System.Drawing.Size(100, 20);
             this.sslTextBox.TabIndex = 6;
             // 
-            // studentsBindingSource
-            // 
-            this.studentsBindingSource.DataSource = typeof(StudentsApps.Students);
-            // 
             // ShowDataGridView
             // 
             this.ShowDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -206,6 +205,10 @@
             this.ShowDataGridView.Name = "ShowDataGridView";
             this.ShowDataGridView.Size = new System.Drawing.Size(338, 150);
             this.ShowDataGridView.TabIndex = 7;
+            // 
+            // studentsBindingSource
+            // 
+            this.studentsBindingSource.DataSource = typeof(StudentsApps.Students);
             // 
             // Students
             // 
@@ -233,8 +236,8 @@
             this.Name = "Students";
             this.Text = "StudentUi";
             this.Load += new System.EventHandler(this.Students_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShowDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
