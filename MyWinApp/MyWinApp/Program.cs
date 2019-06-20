@@ -17,7 +17,16 @@ namespace MyWinApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new HomeForm());
-            Application.Run(new DataTypeForm());
+            //Application.Run(new DataTypeForm());
+            //Application.Run(new ArrayForm());
+            //Application.Run(new ListForm());
+
+            //Application.Run(new ValidationForm());
+
+            //Application.Run(new FeaturesForm());
+            //Application.Run(new DepartmentUi());
+            Application.Run(new StudentUi());
+            
 
         }
     }

@@ -1,7 +1,7 @@
-CREATE DATABASE ADODB
+CREATE DATABASE MyWinApp
 
- USE ADODB
---DROP DATABASE ADODB
+USE MyWinApp
+--DROP DATABASE MyWinApp
 
 CREATE TABLE Districts(
 ID int IDENTITY (1,1) PRIMARY KEY,
@@ -16,17 +16,16 @@ INSERT INTO Districts Values ('Chitagong')
 SELECT * FROM Districts
 
 CREATE TABLE Students(
-ID int IDENTITY (1,1)PRIMARY KEY,
-SL int,
+ID int IDENTITY (1,1),
 RollNo VARCHAR(10),
 Name VARCHAR(100),
 Age int,
 Address VARCHAR(MAX),
-DistrictID int
+DistrictID int FOREIGN KEY REFERENCES Districts(ID)
 )
 --DROP TABLE Students
 
-INSERT INTO Students (SL,RollNo, Name, Age, Address, DistrictID) VALUES (1,'CSE001', 'Ali', 21, 'Mirpur',1)
+INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('CSE001', 'Ali', 21, 'Mirpur',1)
 INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('CSE002', 'Arif', 22, 'Savar',2)
 INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('CSE003', 'Kabir', 20, 'Dhanmondi',2)
 INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('EEE001', 'Araf', 21, 'Uttora',1)
@@ -36,17 +35,15 @@ INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('EEE003', 
 INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('EEE003', 'Snigdha Shaha', 20, 'Uttora',3)
 INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('EEE003', 'monir', 20, 'Uttora',4)
 
-
 SELECT * FROM Students
-
 
 CREATE VIEW StudentsView
 AS
-SELECT s.ID,s.SL,RollNo,s.Name AS Student,Age,s.Address,s.DistrictID, d.Name AS District FROM Students As s
-LEFT JOIN Districts AS d ON d.ID = s.DistrictID
-
+SELECT s.ID ,RollNo, s.Name As Student, Age, Address, DistrictID, d.Name As District FROM Students AS s
+LEFT JOIN Districts AS d ON d.ID= s.DistrictID
 
 SELECT * FROM StudentsView
+
 
 UPDATE Students 
 SET ID = 2
@@ -57,18 +54,12 @@ WHERE ID = 30
 
 
 CREATE TABLE Departments(
-ID int IDENTITY (1,1)PRIMARY KEY,
-SL int,
-Name VARCHAR(50),
-Code VARCHAR(50)
+ID int IDENTITY (1,1),
+Name VARCHAR(50)
 )
---DROP TABLE Departments
 
-INSERT INTO Departments Values (1,'Computer Science and Engineering','CSE')
-INSERT INTO Departments Values (2,'Electronics and Electrical Engineering','EEE')
-
-DELETE Departments
-WHERE ID = 5 
+INSERT INTO Departments Values ('CSE')
+INSERT INTO Departments Values ('EEE')
 
 SELECT * FROM Departments
 

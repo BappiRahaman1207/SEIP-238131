@@ -52,7 +52,7 @@ namespace StudentsApps
             string connectionString = @"server=DESKTOP-GPO65HT;Database= ADODB;integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
-            string commandString = @"SELECT * FROM Students";
+            string commandString = @"SELECT * FROM StudentsView";
             SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
             sqlConnection.Open();
