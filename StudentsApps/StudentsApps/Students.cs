@@ -25,7 +25,7 @@ namespace StudentsApps
   
 
         }
-        int sl;
+        int id;
 
 
         public Students()
@@ -157,7 +157,7 @@ namespace StudentsApps
 
                 //
                 SqlCommand sqlCommand = new SqlCommand();
-                string commandString = @"DELETE FROM Students WHERE SL = '" + sslTextBox.Text + "' ";
+                string commandString = @"DELETE FROM Students WHERE ID = '" + id + "' ";
                 sqlCommand.CommandText = commandString;
                 sqlCommand.Connection = sqlConnection;
 
@@ -225,7 +225,7 @@ namespace StudentsApps
 
                 //
                 SqlCommand sqlCommand = new SqlCommand();
-                string commandString = @"UPDATE Students  SET SL='" + sslTextBox+ "',RollNo='" + rollTextBox + "',Name='" + nameTextBox + "',Age='" + ageTextBox + "',Address='" + addressTextBox + "',DistrictID='" + districtTextBox + "'WHERE SL= '" +sslTextBox.Text + "';";
+                string commandString = @"UPDATE Students  SET SL='" + sslTextBox+ "',RollNo='" + rollTextBox + "',Name='" + nameTextBox + "',Age='" + ageTextBox + "',Address='" + addressTextBox + "',DistrictID='" + districtTextBox + "'WHERE ID= '" + id + "';";
                 sqlCommand.CommandText = commandString;
                 sqlCommand.Connection = sqlConnection;
 
@@ -321,7 +321,7 @@ namespace StudentsApps
 
         private void ShowDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            sl = Convert.ToInt32(ShowDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+            id = Convert.ToInt32(ShowDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
             sslTextBox.Text = ShowDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
             rollTextBox.Text = ShowDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
             nameTextBox.Text = ShowDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
