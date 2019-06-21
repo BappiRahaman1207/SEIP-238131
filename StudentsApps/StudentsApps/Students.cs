@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace StudentsApps
 {
     public partial class Students : Form
@@ -24,6 +25,7 @@ namespace StudentsApps
   
 
         }
+        int sl;
 
 
         public Students()
@@ -46,6 +48,7 @@ namespace StudentsApps
             student.Address = addressTextBox.Text;
             student.DistrictID = Convert.ToInt32(districtTextBox.Text);
             Insert(student);
+            Clear();
 
         }
 
@@ -298,5 +301,34 @@ namespace StudentsApps
         }
 
 
+
+        private void Clear()
+
+        {
+          sslTextBox.Text="";
+          rollTextBox.Text="";
+          nameTextBox.Text="";
+          ageTextBox.Text="";
+          addressTextBox.Text="";
+          districtTextBox.Text="";
+
+        }
+
+        private void ShowDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ShowDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            sl = Convert.ToInt32(ShowDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+            sslTextBox.Text = ShowDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            rollTextBox.Text = ShowDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+            nameTextBox.Text = ShowDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+            ageTextBox.Text = ShowDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+            addressTextBox.Text = ShowDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+            districtTextBox.Text = ShowDataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+        }
     }
 }

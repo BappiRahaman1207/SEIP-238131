@@ -205,6 +205,8 @@
             this.ShowDataGridView.Name = "ShowDataGridView";
             this.ShowDataGridView.Size = new System.Drawing.Size(338, 150);
             this.ShowDataGridView.TabIndex = 7;
+            this.ShowDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShowDataGridView_CellContentClick);
+            this.ShowDataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ShowDataGridView_CellMouseDoubleClick);
             // 
             // studentsBindingSource
             // 
