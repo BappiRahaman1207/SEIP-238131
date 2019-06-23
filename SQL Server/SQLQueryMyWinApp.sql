@@ -37,10 +37,11 @@ INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('EEE003', 
 
 SELECT * FROM Students
 
+
 CREATE VIEW StudentsView
 AS
-SELECT s.ID ,RollNo, s.Name As Student, Age, Address, DistrictID, d.Name As District FROM Students AS s
-LEFT JOIN Districts AS d ON d.ID= s.DistrictID
+SELECT s.ID, RollNo, s.Name As Studnet, Age, Address, DistrictID, d.Name AS District FROM Students AS s
+LEFT JOIN Districts AS d ON d.ID = s.DistrictID
 
 SELECT * FROM StudentsView
 

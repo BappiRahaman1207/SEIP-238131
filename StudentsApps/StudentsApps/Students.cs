@@ -16,6 +16,7 @@ namespace StudentsApps
     {
         class Student
         {
+            public int ID { get; set; }
             public int SL { get; set; }
             public string RollNo { set; get; }
             public string Name { set; get; }
@@ -201,7 +202,7 @@ namespace StudentsApps
         {
             Student student = new Student();
             student.SL = Convert.ToInt32(sslTextBox.Text);
-            student.RollNo = rollTextBox.Text;
+            student.RollNo = rollTextBox.Text.ToString();
             student.Name = nameTextBox.Text;
             student.Age = Convert.ToInt32(ageTextBox.Text);
             student.Address = addressTextBox.Text;

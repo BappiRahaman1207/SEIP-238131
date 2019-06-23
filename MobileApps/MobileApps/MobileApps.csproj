@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2C75B554-C11C-4BFD-AC8E-9D535053972D}</ProjectGuid>
+    <ProjectGuid>{D077CD30-BDC9-4B6D-9AC2-E55F29F880CE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MyWinApp</RootNamespace>
-    <AssemblyName>MyWinApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>MobileApps</RootNamespace>
+    <AssemblyName>MobileApps</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,73 +46,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArrayForm.cs">
+    <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ArrayForm.Designer.cs">
-      <DependentUpon>ArrayForm.cs</DependentUpon>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="BLL\StudentManager.cs" />
-    <Compile Include="DataTypeForm.cs">
+    <Compile Include="Models\MobileInformation.cs" />
+    <Compile Include="PriceRange.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataTypeForm.Designer.cs">
-      <DependentUpon>DataTypeForm.cs</DependentUpon>
+    <Compile Include="PriceRange.Designer.cs">
+      <DependentUpon>PriceRange.cs</DependentUpon>
     </Compile>
-    <Compile Include="DepartmentUi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DepartmentUi.Designer.cs">
-      <DependentUpon>DepartmentUi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FeaturesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FeaturesForm.Designer.cs" />
-    <Compile Include="HomeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HomeForm.Designer.cs">
-      <DependentUpon>HomeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListForm.Designer.cs">
-      <DependentUpon>ListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\District.cs" />
-    <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\StudentRepository.cs" />
-    <Compile Include="StudentUi.cs">
+    <Compile Include="SaveMI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentUi.Designer.cs">
-      <DependentUpon>StudentUi.cs</DependentUpon>
+    <Compile Include="SaveMI.Designer.cs">
+      <DependentUpon>SaveMI.cs</DependentUpon>
     </Compile>
-    <Compile Include="ValidationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ValidationForm.Designer.cs">
-      <DependentUpon>ValidationForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="ArrayForm.resx">
-      <DependentUpon>ArrayForm.cs</DependentUpon>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataTypeForm.resx">
-      <DependentUpon>DataTypeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentUi.resx">
-      <DependentUpon>DepartmentUi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FeaturesForm.resx" />
-    <EmbeddedResource Include="HomeForm.resx">
-      <DependentUpon>HomeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListForm.resx">
-      <DependentUpon>ListForm.cs</DependentUpon>
+    <EmbeddedResource Include="PriceRange.resx">
+      <DependentUpon>PriceRange.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -123,16 +81,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StudentUi.resx">
-      <DependentUpon>StudentUi.cs</DependentUpon>
+    <EmbeddedResource Include="SaveMI.resx">
+      <DependentUpon>SaveMI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ValidationForm.resx">
-      <DependentUpon>ValidationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="Properties\DataSources\MyWinApp.Models.District.datasource" />
-    <None Include="Properties\DataSources\MyWinApp.Models.Student.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -146,6 +98,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BLL\" />
+    <Folder Include="Repository\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

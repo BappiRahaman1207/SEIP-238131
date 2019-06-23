@@ -2,33 +2,36 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyWinApp.Models;
+using MyWinApp.BLL;
+
 
 namespace MyWinApp
 {
     public partial class StudentUi : Form
     {
         //Connection
-        private string connectionString;
-        private SqlConnection sqlConnection;
+        //private string connectionString;
+        //private SqlConnection sqlConnection;
 
         //Command
-        private string commandString;
-        private SqlCommand sqlCommand;
+        //private string commandString;
+        //private SqlCommand sqlCommand;
 
         private Student student;
+        StudentManager _studentManager = new StudentManager();
         public StudentUi()
         {
             InitializeComponent();
             //Initialize Connection
-            connectionString = @"Server=DESKTOP-GPO65HT; Database=MyWinApp; Integrated Security=True";
-            sqlConnection  = new SqlConnection(connectionString);
+            //connectionString = @"Server=DESKTOP-GPO65HT; Database=StudentDB; Integrated Security=True";
+            //sqlConnection  = new SqlConnection(connectionString);
             student = new Student();
 
         }
@@ -36,29 +39,29 @@ namespace MyWinApp
         private void StudentUi_Load(object sender, EventArgs e)
         {
             //load District 
-            LoadDistrict();
-            districtComboBox.Text = "Select Disctrict";
+            //districtComboBox.DataSource = dataTable;
+            districtComboBox.DataSource= _studentManager.LoadDistrict();
         }
 
-        private void LoadDistrict()
-        {
+       // private void LoadDistrict()
+      //  {
             //
-            sqlConnection.Open();
+          //  sqlConnection.Open();
 
             //
-            commandString = @"SELECT * FROM Districts";
-            sqlCommand = new SqlCommand(commandString, sqlConnection);
+         //   commandString = @"SELECT * FROM Districts";
+          //  sqlCommand = new SqlCommand(commandString, sqlConnection);
 
             //
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-            DataTable dataTable = new DataTable();
-            sqlDataAdapter.Fill(dataTable);
+           // SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+           // DataTable dataTable = new DataTable();
+          //  sqlDataAdapter.Fill(dataTable);
             
-            if (dataTable.Rows.Count > 0)
-                districtComboBox.DataSource = dataTable;
+          //  if (dataTable.Rows.Count > 0)
+             //   districtComboBox.DataSource = dataTable;
             //
-            sqlConnection.Close();
-        }
+          //  sqlConnection.Close();
+       // }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
@@ -70,70 +73,58 @@ namespace MyWinApp
 
 
 
-            Insert(student);
+            //Insert(student);
+            _studentManager.Insert(student);
 
         }
 
-        private void Insert(Student student)
-        {
+        //private void Insert(Student student)
+        //{
             //
-            sqlConnection.Open();
+          //  sqlConnection.Open();
 
-            commandString = @"INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('"+ student.RollNo+ "', '"+ student .Name+ "', "+ student.Age+ ", '"+ student.Address+ "',"+ student.DistrictID+ ")";
-            sqlCommand = new SqlCommand(commandString, sqlConnection);
+            //commandString = @"INSERT INTO Students (RollNo, Name, Age, Address, DistrictID) VALUES ('"+ student.RollNo+ "', '"+ student .Name+ "', "+ student.Age+ ", '"+ student.Address+ "',"+ student.DistrictID+ ")";
+            //sqlCommand = new SqlCommand(commandString, sqlConnection);
 
-            int isExecuted;
-            isExecuted=sqlCommand.ExecuteNonQuery();
+             //int isExecuted;
+            //isExecuted=sqlCommand.ExecuteNonQuery();
 
-            if (isExecuted > 0)
-            {
-                MessageBox.Show("Saved!!");
-            }else
-            {
-                MessageBox.Show("Not Saved!!");
-            }
+            //if (isExecuted > 0)
+            //{
+              //  MessageBox.Show("Saved!!");
+            //}else
+            //{
+              //  MessageBox.Show("Not Saved!!");
+            //}
 
             //
-            sqlConnection.Close();
-        }
+         //   sqlConnection.Close();
+       // }
 
         private void ShowButton_Click(object sender, EventArgs e)
         {
-            ShowStudent();
+            // displayDataGridView.DataSource = dataTable;
+            //displayDataGridView.DataSource =  ShowStudent();
         }
 
-        private void ShowStudent()
-        {
-            //
-            sqlConnection.Open();
-
-            //
-            commandString = @"SELECT * FROM StudentsView";
-            sqlCommand = new SqlCommand(commandString, sqlConnection);
-
-            //
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-            DataTable dataTable = new DataTable();
-            sqlDataAdapter.Fill(dataTable);
-
-            if (dataTable.Rows.Count > 0)
-                displayDataGridView.DataSource = dataTable;
-            //
-            sqlConnection.Close();
-        }
-
-        private void EditButton_Click(object sender, EventArgs e)
-        {
-            
-
-          //  Edit(student);
-        }
-
-    //private void Edit(Student student)
+        //private void ShowStudent()
         //{
-            
+        //
+        //  sqlConnection.Open();
 
-      //  }
+        //
+        //  commandString = @"SELECT * FROM StudentsView";
+        //   sqlCommand = new SqlCommand(commandString, sqlConnection);
 
+        //
+        //  SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+        //  DataTable dataTable = new DataTable();
+        //  sqlDataAdapter.Fill(dataTable);
+
+        //  if (dataTable.Rows.Count > 0)
+        //      displayDataGridView.DataSource = dataTable;
+        //
+        // sqlConnection.Close();
+        // }
     }
 }
