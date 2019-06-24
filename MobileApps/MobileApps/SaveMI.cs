@@ -35,7 +35,44 @@ namespace MobileApps
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-           
+            if (modelTextBox.Text == "")
+            {
+                label4.Text = "";
+                label4.Text = "Field Can not be Empty!";
+                return;
+            }
+            else
+            {
+                label4.Text = "";
+            }
+
+
+            if (imeiTextBox.Text == "")
+            {
+                label5.Text = "";
+                label5.Text = "Field Can not be Empty!";
+                return;
+            }
+            else
+            {
+                label5.Text = "";
+            }
+
+
+            if (priceTextBox.Text == "")
+            {
+                label6.Text = "";
+                label6.Text = "Field Can not be Empty!";
+                return;
+            }
+            else
+            {
+                label6.Text = "";
+            }
+
+
+
+
             MobileInformation mobileInformation = new MobileInformation();
             mobileInformation.Model = modelTextBox.Text;
             mobileInformation.IMEI = imeiTextBox.Text;
@@ -85,5 +122,16 @@ namespace MobileApps
 
 
         }
+
+        private void modelTextBox_TextChanged(object sender, EventArgs e)
+        {
+           
+
+        }
+
+
+
+
+
     }
 }

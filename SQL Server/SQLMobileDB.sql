@@ -13,3 +13,4 @@ Price int
 INSERT INTO MobileInformation ( ModelName,IMEI,Price) VALUES ('Nokia 1100','E2R45RTU7',1200)
 
 SELECT * FROM MobileInformation
+
