@@ -14,32 +14,15 @@ namespace SalaryCalculatorAppPractice3
         public int medicalAllowance;
 
 
-        public int GetHomeRent()
-        {
+     
 
-            int homeRent = basicAmount / 100;
-            return homeRent;
+            public string GetFullSalary()
+            {
 
-        }
-
-
-        public int GetMedicalAllowance()
-        {
-
-            int medicalAllowance = basicAmount /100;
-            return medicalAllowance;
-
-        }
-
-
-
-        public int GetSalary()
-        {
-
-            int TotalSalary = basicAmount + homeRent + medicalAllowance;
-            return TotalSalary;
-
-        }
+                int salary = basicAmount + (basicAmount / 100 * homeRent) + (basicAmount / 100 * medicalAllowance);
+                return salary.ToString();
+            }
+    
 
 
     }

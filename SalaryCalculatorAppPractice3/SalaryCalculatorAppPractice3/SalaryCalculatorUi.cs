@@ -26,8 +26,8 @@ namespace SalaryCalculatorAppPractice3
             salaryobj.medicalAllowance = Convert.ToInt32(medicalAllowanceTextBox.Text);
 
         
-           string Show=salaryobj.GetSalary().ToString();
-            MessageBox.Show(Show);
+           string Show=salaryobj.GetFullSalary().ToString();
+            MessageBox.Show(salaryobj.employeeName +" " + "your salary is:" + Show);
 
         }
     }
