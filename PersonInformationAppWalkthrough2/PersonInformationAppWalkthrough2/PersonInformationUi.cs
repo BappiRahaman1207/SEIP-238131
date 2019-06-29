@@ -23,9 +23,10 @@ namespace PersonInformationAppWalkthrough2
         {
             Person personObj = new Person();
 
-            personObj.firstName = firstNameTextBox.Text;
-            personObj.middleName = middleNameTextBox.Text;
-            personObj.lastName = lastNameTextBox.Text;
+            //personObj.GetFisrtName(firstNameTextBox.Text);
+            personObj.FirstName=firstNameTextBox.Text;
+            personObj.MiddleName = middleNameTextBox.Text;
+            personObj.LastName = lastNameTextBox.Text;
 
 
             string fullName = personObj.GetFullName();
